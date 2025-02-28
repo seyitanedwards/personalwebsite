@@ -1,0 +1,85 @@
+---
+# Only the main Sass file needs front matter
+---
+@import "minima";
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    position: relative;
+}
+
+p {
+  margin-bottom: 20px;
+  text-align: left;
+  }
+
+@keyframes wiggle {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+
+body {
+    background: #040273; /* Deep blue color */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #FFFFFF; /* White*/
+}
+.main-nav {
+    font-family: 'B-4' , sans-serif;
+    margin-bottom: 30px;
+    font-size: 1.0em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.main-nav a {
+    color: #FFFFFF; /* White text for navigation links - moved after minima import */
+    text-decoration: none; /* Optional: Removes underlines from links */
+}
+
+.main-nav a:hover {
+    color: #CCCCCC; /* Optional: Light gray on hover for interactivity */
+    text-decoration: underline; /* Optional: Adds underline on hover */
+}
+
+.contact-nav {
+    margin-top: 55px;
+    color: white;
+    font-size: 13px;
+    padding: 5px;
+    text-align: left;
+    /* Justify contact nav */
+}
+
+.contact-nav a {
+    color: white;
+    text-decoration: none;
+}
+h1 {
+    font-family: 'B-4', sans-serif;
+    color: #FFFFFF;
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+}
+h2 {
+    margin-bottom: 25px;
+    font-family: 'B-4', sans-serif;
+    font-size: 15px;
+    color: gray;
+}
+@font-face {
+    font-family: 'B-4';
+    src: url('/assets/fonts/B-4.ttf') format('truetype');
+    /* Add other formats (e.g., .woff, .woff2) if available */
+    font-weight: normal;
+    font-style: normal;
+}

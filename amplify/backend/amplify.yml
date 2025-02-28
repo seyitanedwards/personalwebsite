@@ -1,0 +1,22 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - jekyll build
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - gem install jekyll bundler
+        - bundle install
+    build:
+      commands:
+        - jekyll build
+  artifacts:
+    baseDirectory: _site
+    files:
+      - '**/*'
+  cache:
+    paths: []
+  buildPath: /

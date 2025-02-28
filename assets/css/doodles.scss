@@ -1,0 +1,182 @@
+--- 
+# Only the main Sass file needs front matter (the dashes are enough) 
+---
+ @import "minima";
+
+@font-face {
+    font-family: 'B-4';
+    src: url('/assets/fonts/B-4.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: #040273;
+    /* Deep blue color */
+    font-family: 'B-4', 'Inter', sans-serif;
+    /* Fallback to Inter if B-4 fails */
+    font-weight: 100;
+    margin: 0;
+    padding: 50px;
+    color: #FFFFFF;
+    /* White */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    /* Justify all body text */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    /* Justify container content */
+}
+
+h1,
+h2,
+h3,
+h5,
+p {
+    text-align: justify;
+    /* Justify headings and paragraphs */
+    margin: 0 0 20px 0;
+    /* Consistent spacing */
+}
+
+p {
+    margin-top: 20px;
+    font-size: 15px;
+    color: white;
+}
+
+h5 {
+    font-size: 15px;
+    color: gray;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+
+.main-nav {
+    font-family: 'B-4', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.0em;
+    text-align: justify;
+    /* Justify nav items */
+    color: #FFFFFF;
+}
+
+.main-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    /* Spacing between nav items, replacing   */
+}
+
+.main-nav a:hover {
+    color: #CCCCCC;
+    text-decoration: underline;
+}
+
+.contact-nav {
+    color: gray;
+    font-size: 13px;
+    padding: 5px;
+    text-align: justify;
+    /* Justify contact nav */
+}
+
+.contact-nav a {
+    color: gray;
+    text-decoration: none;
+}
+
+h3 {
+    font-family: 'B-4', sans-serif;
+    color: lightgray;
+    display: flex;
+    /* Use flexbox for alignment */
+    align-items: center;
+    /* Vertically align items */
+    justify-content: flex-start;
+    /* Align items to the left */
+    margin-bottom: 10px;
+    /* Optional: Adjust spacing */
+    text-align: left;
+    /* Override justification for better readability */
+}
+
+h3>* {
+    /* Target direct children (text and spans) */
+    margin-right: 10px;
+    /* Space between company, location, and date */
+}
+
+.location {
+    display: inline-block;
+    border: 1px solid #333;
+    padding: 2px 5px;
+    background-color: #315373;
+    border-radius: 3px;
+    font-size: 13px;
+    margin-left: 15px;
+}
+
+.extra {
+    font-size: 15px;
+    display: inline-block;
+    color: gray;
+    flex-shrink: 0;
+    /* Prevent the date from shrinking */
+    margin-left: 70px;
+    /* Remove previous margin to control spacing with flex */
+
+}
+
+.doodle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 180px;
+    row-gap: 40px;
+}
+
+.doodle-image {
+    text-align: center;
+    min-height: 200px;
+}
+
+.doodle-image img {
+    max-width: 400px;
+    height: auto;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+@keyframes wiggle {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

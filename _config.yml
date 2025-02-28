@@ -1,0 +1,42 @@
+title: seyitan edwards
+email: edwardsseyitan@gmail.com
+description: >- 
+ hi, I'm seyitan edwards. I'm an electrical engineering student at carleton university. welcome!
+baseurl: "" 
+url: "http://localhost:4000" 
+
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  books:
+    output: false # No individual pages, just use for index grid
+
+# Include directories
+include:
+  - books
+  - resume
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
