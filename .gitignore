@@ -1,29 +1,22 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-*.log
+# Jekyll generated files
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# macOS system files
+.DS_Store
+
+# Dependency directories
 node_modules/
 
-#amplify-do-not-edit-begin
-amplify/\#current-cloud-backend
-amplify/.config/local-*
-amplify/logs
-amplify/mock-data
-amplify/mock-api-resources
-amplify/backend/amplify-meta.json
-amplify/backend/.temp
-build/
-dist/
-node_modules/
-aws-exports.js
-awsconfiguration.json
+# Logs
+*.log
+
+# Amplify generated files (in case they’re created later)
+amplify/#
 amplifyconfiguration.json
-amplifyconfiguration.dart
-amplify-build-config.json
-amplify-gradle-config.json
-amplifytools.xcconfig
-.secret-*
-**.sample
-#amplify-do-not-edit-end
+aws-exports.js
+
+# AWS CLI installer
+AWSCLIV2.pkg
+
