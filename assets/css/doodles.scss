@@ -166,13 +166,6 @@ h2 {
     }
 
    
-    .contact-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        /* Changed to center to match second photo */
-        text-align: left;
-        /* Changed to center */
-    }
 
     /* Adjustments for Experience Layout */
     .location {
@@ -226,7 +219,7 @@ body {
 
 
 .doodle-image img {
-    max-width: 400px;
+    max-width: 350px;
     height: auto;
     border: 1px solid #333;
     border-radius: 5px;
