@@ -3,6 +3,7 @@
 --- 
 @import "minima";
 
+/* Import Custom Font */
 @font-face {
     font-family: 'B-4';
     src: url('/assets/fonts/B-4.ttf') format('truetype');
@@ -10,10 +11,7 @@
     font-style: normal;
 }
 
-html, body {
-    overflow-x: hidden;
-}
-
+/* General Body Styling */
 body {
     background: #040273;
     /* Deep blue color */
@@ -21,37 +19,45 @@ body {
     /* Fallback to Inter if B-4 fails */
     font-weight: 100;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     color: #FFFFFF;
     /* White */
-    max-width: 100%;
-    margin: 0;
-    text-align: left;
-    /* Justify all body text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align from top */
+    min-height: 100vh;
 }
 
+/* Main Container */
 .container {
-    max-width: 90%;
+    max-width: 39%;
+    /* Changed from 650px to 65% to match second photo */
     width: 100%;
     margin: 0 auto;
+    /* Centers the container */
     padding: 20px;
     text-align: left;
+    /* Keep content left-aligned */
 }
 
+/* Headings and Paragraphs */
 h1,
 h2,
 h3,
 h5,
 p {
-    text-align: justify;
-    /* Justify headings and paragraphs */
-    margin: 0 0 20px 0;
-    /* Consistent spacing */
+    text-align: left;
+    margin: 0 0 15px 0;
+    /* Reduce spacing */
 }
 
+/* Typography Adjustments */
 p {
     font-size: 15px;
     color: gray;
+    line-height: 1.5;
 }
 
 h5 {
@@ -64,30 +70,45 @@ h3 {
 }
 
 h2 {
+    margin-top: 25px;
+    margin-bottom: 25px;
     font-size: 23px;
+
 }
 
-@media screen and (max-width: 768px) {
+/* Navigation */
 .main-nav {
     font-family: 'B-4', sans-serif;
-    margin-bottom: 20px;
-    font-size: 0.9em;
-    text-align: center;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    color: #FFFFFF;
+    gap: 5px;
+    font-size: 1em;
+    margin: 20px auto;
+    text-align: center;
+    white-space: nowrap;
 }
-
 
 .main-nav a {
-    display: block;
-    margin-bottom: 5px;
+    display: inline-block;
     color: #FFFFFF;
     text-decoration: none;
-    /* Spacing between nav items, replacing   */
+    padding: 0px 5px;
+    position: relative;
+    margin-bottom: 20px;
 }
+
+.main-nav a::before {
+    content: "[";
+    margin-right: 3px;
+    /* Adjust spacing between bracket and text */
+    color: #FFFFFF;
+}
+
+.main-nav a::after {
+    content: "]";
+    margin-left: 3px;
+    /* Adjust spacing between text and bracket */
+    color: #FFFFFF;
 }
 
 .main-nav a:hover {
@@ -95,12 +116,19 @@ h2 {
     text-decoration: underline;
 }
 
+
+/* Contact Navigation */
 .contact-nav {
+    display: flex;
     color: gray;
-    font-size: 13px;
-    padding: 5px;
-    text-align: justify;
-    /* Justify contact nav */
+    justify-content: left;
+    /* Changed from flex-start to center */
+    gap: 5px;
+    font-size: 14px;
+    margin-top: 20px;
+    /* Increased from 10px to 40px to match second photo */
+    text-align: left;
+
 }
 
 .contact-nav a {
@@ -108,66 +136,82 @@ h2 {
     text-decoration: none;
 }
 
-h3 {
-    font-family: 'B-4', sans-serif;
-    color: lightgray;
-    display: flex;
-    /* Use flexbox for alignment */
-    align-items: center;
-    /* Vertically align items */
-    justify-content: flex-start;
-    /* Align items to the left */
-    margin-bottom: 10px;
-    /* Optional: Adjust spacing */
-    text-align: left;
-    /* Override justification for better readability */
+.contact-nav a:hover {
+    color: #CCCCCC;
+    text-decoration: underline;
 }
 
-h3>* {
-    /* Target direct children (text and spans) */
-    margin-right: 10px;
-    /* Space between company, location, and date */
-}
-
+/* Experience and Education Section */
 .location {
     display: inline-block;
-    border: 1px solid #333;
-    padding: 2px 5px;
     background-color: #315373;
+    color: white;
+    padding: 2px 6px;
     border-radius: 3px;
-    font-size: 13px;
-    margin-left: 15px;
+    font-size: 12px;
+    margin-left: 10px;
 }
 
 .extra {
     font-size: 14px;
-    display: inline-block;
+    padding: 1px 4px;
+    margin-left: 6px;
+}
+
+.location-text {
     color: gray;
-    flex-shrink: 0;
-    /* Prevent the date from shrinking */
-    margin-left: auto;
-    /* Remove previous margin to control spacing with flex */
-
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 1px 4px;
+    margin-left: 0px;
 }
 
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
-    h1 {
-        font-size: 24px;
+    .container {
+        max-width: 85%;
+        padding: 15px;
     }
 
-    h2 {
-        font-size: 20px;
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.9em;
     }
 
-    h3 {
-        font-size: 16px;
+    .main-nav a {
+        padding: 5px;
     }
 
+    h1,
+    h2,
     p {
-        font-size: 14px;
+        text-align: left;
+    }
+
+    .contact-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        /* Changed to center to match second photo */
+        text-align: left;
+        /* Changed to center */
+    }
+
+    /* Adjustments for Experience Layout */
+    .location {
+        font-size: 10px;
+        padding: 1px 4px;
+        margin-left: 5px;
     }
 }
 
+/* Prevents Horizontal Scrolling */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* Animation */
 @keyframes wiggle {
     0% {
         transform: translateX(0);

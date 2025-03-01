@@ -1,114 +1,180 @@
----
-# Only the main Sass file needs front matter
----
+--- 
+# Only the main Sass file needs front matter 
+--- 
 @import "minima";
 
+/* Set the container width for optimal readability */
 .container {
-    max-width: 90%;
-    width: 100%;
+    max-width: 39%;
+    /* Keeps content at a readable width */
     margin: 0 auto;
     padding: 20px;
     text-align: left;
-    position: relative;
+    /* Align text to left */
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* General body styling */
+body {
+    background: #040273;
+    /* Deep blue color */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    /* White */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Start from top, not center */
+    min-height: 100vh;
 }
 
 p {
-  margin-bottom: 20px;
-  text-align: left;
-  }
-
-@keyframes wiggle {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+    font-family: 'G-1';
+    font-size: 18px;
 }
-
-
-body {
-    background: #040273; /* Deep blue color */
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 20px;
-    color: #FFFFFF; /* White*/
-}
+/* Navigation */
 .main-nav {
-    font-family: 'B-4' , sans-serif;
-    margin-bottom: 30px;
-    font-size: 1.0em;
-    text-align: left;
-    color: #FFFFFF;
+    font-family: 'B-4', sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 1em;
+    margin: 20px auto;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .main-nav a {
-    color: #FFFFFF; /* White text for navigation links - moved after minima import */
-    text-decoration: none; /* Optional: Removes underlines from links */
+    display: inline-block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0px 5px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.main-nav a::before {
+    content: "[";
+    margin-right: 3px;
+    /* Adjust spacing between bracket and text */
+    color: #FFFFFF;
+}
+
+.main-nav a::after {
+    content: "]";
+    margin-left: 3px;
+    /* Adjust spacing between text and bracket */
+    color: #FFFFFF;
 }
 
 .main-nav a:hover {
-    color: #CCCCCC; /* Optional: Light gray on hover for interactivity */
-    text-decoration: underline; /* Optional: Adds underline on hover */
+    color: #CCCCCC;
+    text-decoration: underline;
 }
 
+/* Contact navigation (Footer Links) */
 .contact-nav {
-    margin-top: 55px;
-    color: white;
-    font-size: 13px;
-    padding: 5px;
-    text-align: left;
-    /* Justify contact nav */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 14px;
+    margin-top: 90px;
+    text-align: center;
 }
 
 .contact-nav a {
     color: white;
     text-decoration: none;
 }
+
+/* Headings */
 h1 {
     font-family: 'B-4', sans-serif;
     color: #FFFFFF;
-    position: relative;
     margin-bottom: 25px;
     text-align: left;
 }
+
 h2 {
-    margin-bottom: 25px;
-    font-family: 'B-4', sans-serif;
-    font-size: 15px;
+    font-family: 'G-1';
+    font-size: 16px;
     color: gray;
+    margin-bottom: 25px;
 }
 
+/* Paragraph styling */
+p {
+    margin-bottom: 20px;
+    text-align: left;
+    /* Matches second image */
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .container {
-        max-width: 95%;
-        padding: 10px;
+        max-width: 85%;
+        padding: 15px;
     }
 
     .main-nav {
+        flex-wrap: wrap;
+        gap: 8px;
         font-size: 0.9em;
-        text-align: center;
-        /* Center links for better readability */
     }
 
     .main-nav a {
-        display: block;
-        /* Stack links vertically */
-        margin-bottom: 5px;
+        padding: 5px;
     }
 
-    h1,h2,p {
-        text-align: center;
-        /* Centers text on mobile for better readability */
+    h1,
+    h2,
+    p {
+        text-align: left;
+        /* Ensure better reading flow */
+    }
+
+    .contact-nav {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
-html, body {
+/* Prevents horizontal scrolling */
+html,
+body {
     overflow-x: hidden;
 }
+
+/* Custom font */
 @font-face {
     font-family: 'B-4';
     src: url('/assets/fonts/B-4.ttf') format('truetype');
-    /* Add other formats (e.g., .woff, .woff2) if available */
     font-weight: normal;
     font-style: normal;
 }

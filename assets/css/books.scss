@@ -1,8 +1,9 @@
 --- 
 # Only the main Sass file needs front matter (the dashes are enough) 
----
+--- 
 @import "minima";
 
+/* Import Custom Font */
 @font-face {
     font-family: 'B-4';
     src: url('/assets/fonts/B-4.ttf') format('truetype');
@@ -10,10 +11,8 @@
     font-style: normal;
 }
 
-html, body {
-    overflow-x: hidden;
-}
 
+/* General Body Styling */
 body {
     background: #040273;
     /* Deep blue color */
@@ -21,153 +20,181 @@ body {
     /* Fallback to Inter if B-4 fails */
     font-weight: 100;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     color: #FFFFFF;
     /* White */
-    max-width: 100%;
-    margin: 0;
-    text-align: left;
-    /* Justify all body text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers container horizontally */
+    justify-content: flex-start;
+    /* Aligns content from top */
+    min-height: 100vh;
 }
 
+/* Main Container */
 .container {
-    max-width: 90%;
+    max-width: 43%;
+    /* Ensures consistent width */
     width: 100%;
-    margin: 0 auto;
+    margin: 0 ;
+    /* Centers the container while keeping text left-aligned */
     padding: 20px;
     text-align: left;
-    
+    margin-left: 25px;
+
 }
 
-h1,h2,h3,h5,p {
-    text-align: justify;
-    /* Justify headings and paragraphs */
-    margin: 0 0 20px 0;
-    /* Consistent spacing */
-}
 
+/* Headings and Paragraphs */
+h1,
+h2,
+h3,
+h5,
 p {
-    font-size: 13px;
-    color: gray;
+    text-align: left;
+    /* Keep text left-aligned */
+    margin: 0 0 15px 0;
+    /* Reduce spacing */
 }
 
 h5 {
-    font-size: 23px;
-    color: white;
-    margin-top: 20px;
+    font-size: 15px;
+    color: gray;
 }
 
 h3 {
-    font-size: 15px;
+    font-size: 18px;
 }
 
 h2 {
     font-size: 23px;
-
+}
+/* Add line on top of year headings (except 2025) */
+h2:nth-of-type(n+3) {
+    /* Target h2 elements starting from the fourth one (2024 and earlier) */
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 15px;
+    margin-top: 15px;
 }
 
-@media screen and (max-width: 768px) {
+/* Add line above first book in Currently Reading section */
+h2:first-of-type+h3 {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 15px;
+    margin-top: 5px;
+}
+
+/* Add line below the last book in Currently Reading section */
+h2:nth-of-type(2) {
+    position: relative;
+}
+
+h2:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* Navigation */
 .main-nav {
     font-family: 'B-4', sans-serif;
-    margin-bottom: 20px;
-    font-size: 0.9em;
-    text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    color: #FFFFFF;
+    gap: 5px;
+    font-size: 1em;
+    margin: 20px auto;
+    text-align: center;
+    white-space: nowrap;
 }
 
+/* Properly Wrap Brackets Around Links */
 .main-nav a {
-    display: block;
-    margin-bottom: 5px;
+    display: inline-block;
     color: #FFFFFF;
     text-decoration: none;
-    
-}
+    padding: 0 5px;
+    position: relative;
+    margin-bottom: 20px;
 }
 
+.main-nav a::before {
+    content: "[";
+    margin-right: 3px;
+    color: #FFFFFF;
+}
+
+.main-nav a::after {
+    content: "]";
+    margin-left: 3px;
+    color: #FFFFFF;
+}
+
+/* Hover Effect */
 .main-nav a:hover {
     color: #CCCCCC;
     text-decoration: underline;
 }
 
-.contact-nav {
-    color: gray;
-    font-size: 13px;
-    padding: 5px;
-    text-align: justify;
-    /* Justify contact nav */
-}
-
-.contact-nav a {
-    color: gray;
-    margin: 0 5px;
-    /* Spacing between nav items, replacing   */
-    text-decoration: none;
-}
-
-h3 {
-    font-family: 'B-4', sans-serif;
-    color: lightgray;
-    display: flex;
-    /* Use flexbox for alignment */
-    align-items: center;
-    /* Vertically align items */
-    justify-content: flex-start;
-    /* Align items to the left */
-    margin-bottom: 10px;
-    /* Optional: Adjust spacing */
-    text-align: left;
-    /* Override justification for better readability */
-}
-
-h3>* {
-    /* Target direct children (text and spans) */
-    margin-right: 10px;
-    /* Space between company, location, and date */
-}
-
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    h3 {
-        font-size: 16px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-}
-
+/* Bookshelf Location Tags */
 .location {
     display: inline-block;
-    border: 1px solid #333;
-    padding: 2px 5px;
     background-color: #315373;
+    color: white;
+    padding: 2px 6px;
     border-radius: 3px;
-    font-size: 14px;
-    margin-left: 15px;
+    font-size: 12px;
+    margin-left: 10px;
 }
 
-.extra {
-    font-size: 14px;
-    display: inline-block;
-    color: gray;
-    flex-shrink: 0;
-    /* Prevent the date from shrinking */
-    margin-left: auto;
-    /* Remove previous margin to control spacing with flex */
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 85%;
+        padding: 15px;
+    }
 
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.9em;
+    }
+
+    .main-nav a {
+        padding: 5px;
+    }
+
+    h1,
+    h2,
+    p {
+        text-align: left;
+        /* Keep text left-aligned */
+    }
+
+    .contact-nav {
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    /* Adjustments for Book List Layout */
+    .location {
+        font-size: 10px;
+        padding: 1px 4px;
+        margin-left: 5px;
+    }
 }
 
+/* Prevents Horizontal Scrolling */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* Animation */
 @keyframes wiggle {
     0% {
         transform: translateX(0);
