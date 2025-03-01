@@ -10,6 +10,10 @@
     font-style: normal;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     background: #040273;
     /* Deep blue color */
@@ -17,22 +21,22 @@ body {
     /* Fallback to Inter if B-4 fails */
     font-weight: 100;
     margin: 0;
-    padding: 50px;
+    padding: 20px;
     color: #FFFFFF;
     /* White */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: justify;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
     /* Justify all body text */
 }
 
 .container {
-    max-width: 800px;
+    max-width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
-    text-align: justify;
-    /* Justify container content */
+    text-align: left;
+    
 }
 
 h1,h2,h3,h5,p {
@@ -62,20 +66,26 @@ h2 {
 
 }
 
-
+@media screen and (max-width: 768px) {
 .main-nav {
     font-family: 'B-4', sans-serif;
     margin-bottom: 20px;
-    font-size: 1.0em;
-    text-align: justify;
-    /* Justify nav items */
+    font-size: 0.9em;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     color: #FFFFFF;
 }
 
 .main-nav a {
+    display: block;
+    margin-bottom: 5px;
     color: #FFFFFF;
     text-decoration: none;
     
+}
 }
 
 .main-nav a:hover {
@@ -119,6 +129,24 @@ h3>* {
     /* Space between company, location, and date */
 }
 
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
 .location {
     display: inline-block;
     border: 1px solid #333;
@@ -130,12 +158,12 @@ h3>* {
 }
 
 .extra {
-    font-size: 15px;
+    font-size: 14px;
     display: inline-block;
     color: gray;
     flex-shrink: 0;
     /* Prevent the date from shrinking */
-    margin-left: 70px;
+    margin-left: auto;
     /* Remove previous margin to control spacing with flex */
 
 }

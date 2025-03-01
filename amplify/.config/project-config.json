@@ -9,7 +9,7 @@
       "SourceDir": ".",
       "DistributionDir": "_site",
       "BuildCommand": "jekyll build",
-      "StartCommand": ""
+      "StartCommand": "none"
     }
   },
   "providers": [

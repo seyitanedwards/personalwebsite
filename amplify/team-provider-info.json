@@ -1,15 +1,15 @@
 {
-  "prod": {
+  "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-personalwebsite-prod-ca5a8-authRole",
-      "UnauthRoleArn": "arn:aws:iam::390403876571:role/amplify-personalwebsite-prod-ca5a8-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::390403876571:role/amplify-personalwebsite-prod-ca5a8-authRole",
+      "AuthRoleName": "amplify-personalwebsite-main-ed726-authRole",
+      "UnauthRoleArn": "arn:aws:iam::390403876571:role/amplify-personalwebsite-main-ed726-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::390403876571:role/amplify-personalwebsite-main-ed726-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-personalwebsite-prod-ca5a8-deployment",
-      "UnauthRoleName": "amplify-personalwebsite-prod-ca5a8-unauthRole",
-      "StackName": "amplify-personalwebsite-prod-ca5a8",
-      "StackId": "arn:aws:cloudformation:us-east-2:390403876571:stack/amplify-personalwebsite-prod-ca5a8/8edd6060-f5a0-11ef-83dc-02e15ccfbdc7",
-      "AmplifyAppId": "d1uirgcb6pmnjz"
+      "DeploymentBucketName": "amplify-personalwebsite-main-ed726-deployment",
+      "UnauthRoleName": "amplify-personalwebsite-main-ed726-unauthRole",
+      "StackName": "amplify-personalwebsite-main-ed726",
+      "StackId": "arn:aws:cloudformation:us-east-2:390403876571:stack/amplify-personalwebsite-main-ed726/2802edd0-f64d-11ef-8f73-0a52e2d20091",
+      "AmplifyAppId": "d3nma76vqs3j7e"
     }
   }
 }

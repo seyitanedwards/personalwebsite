@@ -4,7 +4,8 @@
 @import "minima";
 
 .container {
-    max-width: 800px;
+    max-width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     text-align: left;
@@ -75,6 +76,34 @@ h2 {
     font-family: 'B-4', sans-serif;
     font-size: 15px;
     color: gray;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    .main-nav {
+        font-size: 0.9em;
+        text-align: center;
+        /* Center links for better readability */
+    }
+
+    .main-nav a {
+        display: block;
+        /* Stack links vertically */
+        margin-bottom: 5px;
+    }
+
+    h1,h2,p {
+        text-align: center;
+        /* Centers text on mobile for better readability */
+    }
+}
+
+html, body {
+    overflow-x: hidden;
 }
 @font-face {
     font-family: 'B-4';
