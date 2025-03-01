@@ -3,11 +3,12 @@ backend:
   phases:
     build:
       commands:
-        - jekyll build
+        - 'echo "No backend resources to deploy"'
 frontend:
   phases:
     preBuild:
       commands:
+        - yum update -y && yum install -y ruby ruby-devel
         - gem install jekyll bundler
         - bundle install
     build:
@@ -19,4 +20,3 @@ frontend:
       - '**/*'
   cache:
     paths: []
-  buildPath: /
