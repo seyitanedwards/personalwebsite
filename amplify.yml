@@ -1,22 +1,20 @@
 version: 1
-backend:
-  phases:
-    build:
-      commands:
-        - 'echo "No backend resources to deploy"'
 frontend:
   phases:
     preBuild:
       commands:
-        - yum update -y && yum install -y ruby ruby-devel
+        - sudo yum update -y
+        - sudo yum install -y ruby ruby-devel
         - gem install jekyll bundler
-        - bundle install
     build:
       commands:
-        - jekyll build
+        - bundle install
+        - bundle exec jekyll build
   artifacts:
     baseDirectory: _site
     files:
       - '**/*'
   cache:
-    paths: []
+    paths:
+      - node_modules/**/*
+      - vendor/**/*
