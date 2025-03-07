@@ -57,6 +57,7 @@ p {
     font-family: 'G-1';
     font-size: 18px;
 }
+
 /* Navigation */
 .main-nav {
     font-family: 'B-4', sans-serif;
@@ -112,11 +113,6 @@ p {
     text-decoration: none;
 }
 
-.contact-nav a:hover {
-    color: white;
-    text-decoration: none;
-}
-
 /* Headings */
 h1 {
     font-family: 'B-4', sans-serif;
@@ -138,6 +134,7 @@ p {
     text-align: left;
     /* Matches second image */
     line-height: 1.6;
+    font-size: 20px;
 }
 
 /* Responsive Adjustments */
