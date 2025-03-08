@@ -38,7 +38,7 @@
 
 /* General body styling */
 body {
-    background: #040273;
+    background: #18230F;
     /* Deep blue color */
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -52,6 +52,7 @@ body {
     /* Start from top, not center */
     min-height: 100vh;
 }
+
 
 p {
     font-family: 'G-1';
@@ -182,4 +183,19 @@ body {
     src: url('/assets/fonts/B-4.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+.myself-image {
+    text-align: left;
+    min-height: none;
+    
+}
+
+
+.myself-image img {
+    height: 200px;
+    
+    max-width: 300px;
+    border: 1px solid #333;
+    border-radius: 5px;
 }

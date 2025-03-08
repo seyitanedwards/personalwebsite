@@ -14,12 +14,11 @@
 
 /* General Body Styling */
 body {
-    background: #040273;
-    /* Deep blue color */
+    background: #18230F;
     font-family: 'B-4', 'Inter', sans-serif;
     /* Fallback to Inter if B-4 fails */
     font-weight: 100;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     color: #FFFFFF;
     /* White */
@@ -34,14 +33,14 @@ body {
 
 /* Main Container */
 .container {
-    max-width: 43%;
+    max-width: 39%;
     /* Ensures consistent width */
     width: 100%;
-    margin: 0 ;
+    margin: 0 auto;
     /* Centers the container while keeping text left-aligned */
     padding: 20px;
     text-align: left;
-    margin-left: 25px;
+    
 
 }
 
@@ -103,7 +102,6 @@ h2:nth-of-type(2)::before {
 .main-nav {
     font-family: 'B-4', sans-serif;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
     font-size: 1em;
