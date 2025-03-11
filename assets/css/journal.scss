@@ -139,13 +139,35 @@ h2 {
 
 .post-nav a:hover {
     color: gray;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: gray;
+    /* Match hover text color */
 }
 
 .post-nav a {
     color: white;
     text-decoration: none;
 }
+
+.post-nav a::after {
+    content: "→";
+    /* Unicode arrow or use &rarr; for HTML entity */
+    color: white;
+    /* Match the link color */
+    margin-left: 5px;
+    /* Space between text and arrow */
+    transition: color 0.3s ease;
+    /* Sync with hover */
+    text-decoration: none;
+    
+}
+
+.post-nav a:hover::after {
+    color: gray;
+    /* Lighter arrow on hover */
+    text-decoration: none;
+}
+
 /* Prevents Horizontal Scrolling */
 html,
 body {

@@ -113,6 +113,7 @@ p {
     text-decoration: none;
 }
 
+
 /* Headings */
 h1 {
     font-family: 'B-4', sans-serif;
@@ -123,7 +124,7 @@ h1 {
 
 h2 {
     font-family: 'G-1';
-    font-size: 16px;
+    font-size: 25px;
     color: gray;
     margin-bottom: 25px;
 }
@@ -136,6 +137,7 @@ p {
     line-height: 1.6;
     font-size: 20px;
 }
+
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
@@ -165,6 +167,13 @@ p {
         flex-wrap: wrap;
         justify-content: center;
     }
+}
+
+img[src="/assets/images/snowboard.jpeg"] {
+    height: 380px;
+    /* Set your desired height */
+    width: auto;
+    /* Keeps the aspect ratio */
 }
 
 /* Prevents horizontal scrolling */
