@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply saved theme on page load
     if (currentTheme === 'inverted') {
         body.classList.add('inverted');
-    }
+    } 
 
     // Toggle theme on button click
     themeToggle.addEventListener('click', () => {
