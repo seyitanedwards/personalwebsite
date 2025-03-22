@@ -234,3 +234,30 @@ body {
         transform: translateX(0);
     }
 }
+
+
+.background-grid {
+    /*display: grid; */
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center; */
+    column-gap: 180px;
+    row-gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    /*gap: 180px; */
+    /*row-gap: 40px; */
+}
+
+
+.background-image {
+    text-align: center;
+    /*min-height: 200px;*/
+}
+
+
+.background-image img {
+    max-width: 500px;
+    height: 500px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
