@@ -3,6 +3,32 @@
 --- 
 @import "minima";
 
+:root {
+    --background-color: #030620;
+    /* Deep blue */
+    --text-color: #FFFFFF;
+    /* White */
+    --link-color: #CCCCCC;
+    /* Light gray for links and hover */
+    --secondary-text-color: #A0A0A0;
+    /* Gray for secondary text like h2 */
+    --separator-color: #E5E5E5;
+    /* White separator lines */
+}
+
+body.inverted {
+    --background-color: white;
+    /* Light background */
+    --text-color: #1A1A1A;
+    /* Dark text */
+    --link-color: #005F73;
+    /* Darker link color */
+    --secondary-text-color: #5F5F5F;
+    /* Medium-dark gray for secondary text */
+    --separator-color: #1A1A1A;
+    /* Dark separator */
+}
+
 /* Set the container width for optimal readability */
 .container {
     max-width: 39%;
@@ -39,12 +65,12 @@
 /* General body styling */
 body {
     /*background: #18230F;*/
-    background: #030620;
+    background: var(--background-color);
     /* Deep blue color */
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: #FFFFFF;
+    color: var(--text-color);
     /* White */
     display: flex;
     flex-direction: column;
@@ -52,12 +78,14 @@ body {
     justify-content: flex-start;
     /* Start from top, not center */
     min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 
 p {
     font-family: 'G-1';
     font-size: 18px;
+    color: var(--text-color);
 }
 /* Navigation */
 .main-nav {
@@ -73,7 +101,7 @@ p {
 
 .main-nav a {
     display: inline-block;
-    color: #FFFFFF;
+    color: var(--text-color);
     text-decoration: none;
     padding: 0px 5px;
     position: relative;
@@ -84,18 +112,18 @@ p {
     content: "[";
     margin-right: 3px;
     /* Adjust spacing between bracket and text */
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .main-nav a::after {
     content: "]";
     margin-left: 3px;
     /* Adjust spacing between text and bracket */
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .main-nav a:hover {
-    color: #CCCCCC;
+    color: var(--link-color);
     text-decoration: underline;
 }
 
@@ -110,19 +138,19 @@ p {
 }
 
 .contact-nav a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
 }
 
 .contact-nav a:hover {
-    color: white;
+    color: var(--link-color);
     text-decoration: none;
 }
 
 /* Headings */
 h1 {
     font-family: 'B-4', sans-serif;
-    color: #FFFFFF;
+    color: var(--text-color);
     margin-bottom: 25px;
     text-align: left;
 }
@@ -130,7 +158,7 @@ h1 {
 h2 {
     font-family: 'G-1';
     font-size: 16px;
-    color: gray;
+    color: var(--secondary-text-color);
     margin-bottom: 25px;
 }
 
@@ -186,17 +214,23 @@ body {
     font-style: normal;
 }
 
-.myself-image {
-    text-align: left;
-    min-height: none;
-    
+/* Theme toggle button */ 
+#theme-toggle {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 5px;
 }
 
+#theme-toggle:hover {
+    opacity: 0.6;
+}
 
-.myself-image img {
-    height: 200px;
-    
-    max-width: 300px;
-    border: 1px solid #333;
-    border-radius: 5px;
+#theme-toggle:focus {
+    outline: 2px solid var(--link-color);
+    /* Accessibility */
 }

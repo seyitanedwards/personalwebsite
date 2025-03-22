@@ -11,16 +11,43 @@
     font-style: normal;
 }
 
+:root {
+    --background-color: #030620;
+    /* Deep blue */
+    --text-color: #FFFFFF;
+    /* White */
+    --link-color: #CCCCCC;
+    /* Light gray for links and hover */
+    --secondary-text-color: #A0A0A0;
+    /* Gray for secondary text like h2 */
+    --separator-color: #E5E5E5;
+    /* White separator lines */
+}
+
+/* Inverted theme */
+body.inverted {
+    --background-color: white;
+    /* Light background */
+    --text-color: #1A1A1A;
+    /* Dark text */
+    --link-color: #005F73;
+    /* Darker link color */
+    --secondary-text-color: #5F5F5F;
+    /* Medium-dark gray for secondary text */
+    --separator-color: #1A1A1A;
+    /* Dark separator */
+}
+
 /* General Body Styling */
 body {
    /* background: #18230F; */
-    background: #030620;
+    background: var(--background-color);
     font-family: 'B-4', 'Inter', sans-serif;
     /* Fallback to Inter if B-4 fails */
     font-weight: 100;
     margin: 0 auto;
     padding: 0;
-    color: #FFFFFF;
+    color: var(--text-color);
     /* White */
     display: flex;
     flex-direction: column;
@@ -28,6 +55,7 @@ body {
     justify-content: flex-start;
     /* Align from top */
     min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Main Container */
@@ -56,13 +84,13 @@ p {
 /* Typography Adjustments */
 p {
     font-size: 15px;
-    color: gray;
+    color: var(--secondary-text-color);
     line-height: 1.5;
 }
 
 h5 {
     font-size: 15px;
-    color: gray;
+    color: var(--secondary-text-color);
 }
 
 h3 {
@@ -90,7 +118,7 @@ h2 {
 
 .main-nav a {
     display: inline-block;
-    color: #FFFFFF;
+    color: var(--text-color);
     text-decoration: none;
     padding: 0px 5px;
     position: relative;
@@ -101,18 +129,18 @@ h2 {
     content: "[";
     margin-right: 3px;
     /* Adjust spacing between bracket and text */
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .main-nav a::after {
     content: "]";
     margin-left: 3px;
     /* Adjust spacing between text and bracket */
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .main-nav a:hover {
-    color: #CCCCCC;
+    color: var(--link-color);
     text-decoration: underline;
 }
 
@@ -120,7 +148,7 @@ h2 {
 /* Contact Navigation */
 .contact-nav {
     display: flex;
-    color: gray;
+    color: var(--secondary-text-color);
     justify-content: left;
     /* Changed from flex-start to center */
     gap: 5px;
@@ -131,12 +159,12 @@ h2 {
    
 }
 .contact-nav a {
-    color: gray;
+    color: var(--secondary-text-color);
     text-decoration: none;
 }
 
 .contact-nav a:hover {
-    color: #CCCCCC;
+    color: var(--secondary-text-color);
     text-decoration: underline;
 }
 /* Experience and Education Section */
@@ -157,7 +185,7 @@ h2 {
 }
 
 .location-text {
-    color: gray;
+    color: white;
     margin-top: 10px;
     font-size: 14px;
     padding: 1px 4px;
@@ -229,4 +257,23 @@ body {
     100% {
         transform: translateX(0);
     }
+}
+#theme-toggle {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#theme-toggle:hover {
+    opacity: 0.6;
+}
+
+#theme-toggle:focus {
+    outline: 2px solid var(--link-color);
+    /* Accessibility */
 }

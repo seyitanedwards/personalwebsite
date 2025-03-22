@@ -11,17 +11,44 @@
     font-style: normal;
 }
 
+:root {
+    --background-color: #030620;
+    /* Deep blue */
+    --text-color: #FFFFFF;
+    /* White */
+    --link-color: #CCCCCC;
+    /* Light gray for links and hover */
+    --secondary-text-color: #A0A0A0;
+    /* Gray for secondary text like h2 */
+    --separator-color: #E5E5E5;
+    /* White separator lines */
+    --line-color: rgba(255, 255, 255, 0.5);
+}
+
+body.inverted {
+    --background-color: white;
+    /* Light background */
+    --text-color: #1A1A1A;
+    /* Dark text */
+    --link-color: #005F73;
+    /* Darker link color */
+    --secondary-text-color: #5F5F5F;
+    /* Medium-dark gray for secondary text */
+    --separator-color: #1A1A1A;
+    /* Dark separator */
+    --line-color: rgba(0, 0, 0, 0.5);
+}
 
 /* General Body Styling */
 body {
    /* background: #18230F;*/
-    background: #030620;
+    background: var(--background-color);
     font-family: 'B-4', 'Inter', sans-serif;
     /* Fallback to Inter if B-4 fails */
     font-weight: 100;
     margin: 0 auto;
     padding: 0;
-    color: #FFFFFF;
+    color: var(--text-color);
     /* White */
     display: flex;
     flex-direction: column;
@@ -30,6 +57,7 @@ body {
     justify-content: flex-start;
     /* Aligns content from top */
     min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 /* Main Container */
@@ -60,7 +88,7 @@ p {
 
 h5 {
     font-size: 15px;
-    color: gray;
+    color: var(--secondary-text-color);
 }
 
 h3 {
@@ -73,14 +101,14 @@ h2 {
 /* Add line on top of year headings (except 2025) */
 h2:nth-of-type(n+3) {
     /* Target h2 elements starting from the fourth one (2024 and earlier) */
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid var(--line-color);
     padding-top: 15px;
     margin-top: 15px;
 }
 
 /* Add line above first book in Currently Reading section */
 h2:first-of-type+h3 {
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid var(--line-color);
     padding-top: 15px;
     margin-top: 5px;
 }
@@ -97,7 +125,7 @@ h2:nth-of-type(2)::before {
     left: 0;
     width: 100%;
     height: 1px;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid var(--line-color);
 }
 /* Navigation */
 .main-nav {
@@ -114,7 +142,7 @@ h2:nth-of-type(2)::before {
 /* Properly Wrap Brackets Around Links */
 .main-nav a {
     display: inline-block;
-    color: #FFFFFF;
+    color: var(--text-color);
     text-decoration: none;
     padding: 0 5px;
     position: relative;
@@ -124,18 +152,18 @@ h2:nth-of-type(2)::before {
 .main-nav a::before {
     content: "[";
     margin-right: 3px;
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .main-nav a::after {
     content: "]";
     margin-left: 3px;
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 /* Hover Effect */
 .main-nav a:hover {
-    color: #CCCCCC;
+    color: var(--link-color);
     text-decoration: underline;
 }
 
@@ -214,4 +242,24 @@ body {
     100% {
         transform: translateX(0);
     }
+}
+
+#theme-toggle {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#theme-toggle:hover {
+    opacity: 0.8;
+}
+
+#theme-toggle:focus {
+    outline: 2px solid var(--link-color);
+    /* Accessibility */
 }

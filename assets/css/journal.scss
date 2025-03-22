@@ -11,17 +11,47 @@
     font-style: normal;
 }
 
+:root {
+    --background-color: #030620;
+    /* Deep blue */
+    --text-color: #FFFFFF;
+    /* White */
+    --link-color: #CCCCCC;
+    /* Light gray for links and hover */
+    --secondary-text-color: #A0A0A0;
+    /* Gray for secondary text like h2 */
+    --separator-color: #E5E5E5;
+    /* White separator lines */
+    --border-color: #333;
+    --line-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Inverted theme */
+body.inverted {
+    --background-color: white;
+    /* Light background */
+    --text-color: #1A1A1A;
+    /* Dark text */
+    --link-color: #005F73;
+    /* Darker link color */
+    --secondary-text-color: #5F5F5F;
+    /* Medium-dark gray for secondary text */
+    --separator-color: #1A1A1A;
+    /* Dark separator */
+    --line-color: rgba(0, 0, 0, 0.5);
+}
+
 /* General Body Styling */
 body {
     /*background: #18230F; */
-    background: #030620;
+    background: var(--background-color);
     /* Deep blue color */
     font-family: 'B-4', 'Inter', sans-serif;
     /* Fallback to Inter if B-4 fails */
     font-weight: 100;
     margin: 0;
     padding: 0;
-    color: #FFFFFF;
+    color: var(--text-color);
     /* White */
     display: flex;
     flex-direction: column;
@@ -29,6 +59,7 @@ body {
     justify-content: flex-start;
     /* Align from top */
     min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Main Container */
@@ -60,14 +91,14 @@ h1{
 p {
     margin-top: 2px;
     font-size: 15px;
-    color: gray;
+    color: var(--secondary-text-color);
     line-height: 1.5;
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px solid var(--line-color);
 }
 
 
 h2 {
-    color: #FFFFFF;
+    color: var(--text-color);
     margin-top: 25px;
     margin-bottom: 5px;
     font-size: 23px;
@@ -88,7 +119,7 @@ h2 {
 
 .main-nav a {
     display: inline-block;
-    color: #FFFFFF;
+    color: var(--text-color);
     text-decoration: none;
     padding: 0px 5px;
     position: relative;
@@ -99,18 +130,17 @@ h2 {
     content: "[";
     margin-right: 3px;
     /* Adjust spacing between bracket and text */
-    color: #FFFFFF;
+    color: var(--text-color);
 }
-
 .main-nav a::after {
     content: "]";
     margin-left: 3px;
     /* Adjust spacing between text and bracket */
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .main-nav a:hover {
-    color: #CCCCCC;
+    color: var(--link-color);
     text-decoration: underline;
 }
 
@@ -139,21 +169,21 @@ h2 {
 }
 
 .post-nav a:hover {
-    color: gray;
+    color: var(--link-color);
     text-decoration: underline;
-    text-decoration-color: gray;
+    text-decoration-color: var(--link-color);
     /* Match hover text color */
 }
 
 .post-nav a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
 }
 
 .post-nav a::after {
     content: "→";
     /* Unicode arrow or use &rarr; for HTML entity */
-    color: white;
+    color: var(--text-color);
     /* Match the link color */
     margin-left: 5px;
     /* Space between text and arrow */
@@ -164,7 +194,7 @@ h2 {
 }
 
 .post-nav a:hover::after {
-    color: gray;
+    color: var(--link-color);
     /* Lighter arrow on hover */
     text-decoration: none;
 }
@@ -196,4 +226,24 @@ body {
     100% {
         transform: translateX(0);
     }
+}
+
+#theme-toggle {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#theme-toggle:hover {
+    opacity: 0.8;
+}
+
+#theme-toggle:focus {
+    outline: 2px solid var(--link-color);
+    
 }
